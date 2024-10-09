@@ -23,7 +23,7 @@ type GastosCasa = {
 export default function Gastos() {
   const [gastos, setGastos] = useState<GastosCasa[]>([]);
   const [currentGastos, setCurrentGastos] = useState<Partial<GastosCasa>>({});
-  const [currentDateTime, setCurrentDateTime] = useState("");
+  //  const [currentDateTime, setCurrentDateTime] = useState("");
 
   useEffect(() => {
     const savedGastos = localStorage.getItem("gastosCasa");
@@ -31,15 +31,15 @@ export default function Gastos() {
       setGastos(JSON.parse(savedGastos));
     }
 
-    const updateDateTime = () => {
-      const now = new Date();
-      setCurrentDateTime(now.toLocaleString());
-    };
-
-    updateDateTime();
-    const timer = setInterval(updateDateTime, 1000);
-
-    return () => clearInterval(timer);
+    //    const updateDateTime = () => {
+    //      const now = new Date();
+    //      setCurrentDateTime(now.toLocaleString());
+    //    };
+    //
+    //    updateDateTime();
+    //    const timer = setInterval(updateDateTime, 1000);
+    //
+    //    return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
